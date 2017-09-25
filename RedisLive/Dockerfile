@@ -19,6 +19,9 @@ COPY conf/redis-live.conf /redislive/src/redis-live.conf
 RUN cd /redislive \
     && pip install -r requirements.txt
 
+RUN chmod +x /redislive/src/redis-monitor.py \
+    && chmod +x /redislive/src/redis-live.py
+
 WORKDIR /redislive/src
 
 EXPOSE 8888
