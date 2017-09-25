@@ -20,7 +20,8 @@ RUN cd /redislive \
     && pip install -r requirements.txt
 
 RUN chmod +x /redislive/src/redis-monitor.py \
-    && chmod +x /redislive/src/redis-live.py
+    && chmod +x /redislive/src/redis-live.py \
+    && chmod -R 777 /redislive
 
 WORKDIR /redislive/src
 
